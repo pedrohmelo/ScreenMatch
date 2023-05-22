@@ -4,10 +4,12 @@ import screenmatch.modelos.Episodio;
 import screenmatch.modelos.Filme;
 import screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("The Matrix");
+        Filme meuFilme = new Filme("The Matrix");
+        //meuFilme.setNome("The Matrix");
         meuFilme.setAnoDeLancamento(1999);
         meuFilme.setDuracaoEmMinutos(135);
         meuFilme.setIncluidoNoPlano(true);
@@ -22,8 +24,8 @@ public class Principal {
 
         System.out.println("*********************************************************");
 
-        Filme meuFilme2 = new Filme();
-        meuFilme2.setNome("Senhor dos Anéis");
+        Filme meuFilme2 = new Filme("Senhor dos Anéis");
+        //meuFilme2.setNome("Senhor dos Anéis");
         meuFilme2.setAnoDeLancamento(1999);
         meuFilme2.setDuracaoEmMinutos(163);
         meuFilme2.setIncluidoNoPlano(true);
@@ -56,6 +58,11 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(meuFilme2);
+        System.out.println("TAM: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println("Todo mundo da lista: " + listaDeFilmes);
     }
 }
